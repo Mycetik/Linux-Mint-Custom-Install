@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=sh -c "while true; do xmodmap ~/.Xmodmap; sleep 30; done"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Permanent Ge Fix
+Comment=Keep the GHE key fixed even if Cinnamon resets it

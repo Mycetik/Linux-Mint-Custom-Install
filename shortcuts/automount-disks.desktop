@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=sh -c 'bash ~/.local/bin/automount-disks.sh'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=AutoMount Disks
+Comment=Автоматичне монтування дисків при вході

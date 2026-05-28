@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=sh -c 'sleep 3 && copyq'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=CopyQ
+Comment=Менеджер буфера обміну

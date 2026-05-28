@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Phase 2 Setup
+Exec=sh -c 'bash ~/.local/bin/phase2-setup.sh'
+Terminal=false
+X-GNOME-Autostart-Delay=0
+X-GNOME-Autostart-Phase=Panel
