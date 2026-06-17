@@ -1,0 +1,2 @@
+# /etc/default/earlyoom
+EARLYOOM_ARGS="-m 5,3 -M 1048576,524288 -s 100 -S 100 -r 0"
