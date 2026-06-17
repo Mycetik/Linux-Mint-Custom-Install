@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/local/bin/watcher.sh
+Hidden=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
+Name=Запобігання багам
+Comment=Невеликий скрипт, який допомагає системі краще працювати. Краще його не вимикати
