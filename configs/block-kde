@@ -1,0 +1,4 @@
+# /etc/apt/preferences.d/block-kde
+Package: kde-plasma-desktop kubuntu-desktop plasma-desktop plasma-workspace
+Pin: release *
+Pin-Priority: -1
