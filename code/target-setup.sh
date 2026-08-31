@@ -4,7 +4,7 @@
 LOG="/var/log/nvidia-post-install.log"
 echo "$(date)" > "$LOG"
 
-echo "Налаштування одноразового автологіну..." >> "$LOG"
+echo "Налаштування..." >> "$LOG"
 mkdir -p /etc/lightdm/lightdm.conf.d
 
 NEW_USER=$(awk -F: '$3==1000 {print $1}' /etc/passwd)
@@ -15,6 +15,8 @@ autologin-user=$NEW_USER
 autologin-user-timeout=0
 EOF
 
+echo "%sudo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/99-phase2-nopasswd
+chmod 0440 /etc/sudoers.d/99-phase2-nopasswd
 
 echo "Перевірка наявності Інтернету..." >> "$LOG"
 if curl -Is --connect-timeout 5 google.com > /dev/null 2>&1; then

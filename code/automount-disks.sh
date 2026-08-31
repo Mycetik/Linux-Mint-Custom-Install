@@ -1,4 +1,6 @@
 #!/bin/bash
+# /etc/skel/.local/bin/automount-disks.sh
+
 sleep 5
 
 MOUNTED=false
@@ -20,6 +22,7 @@ for dev in $DISKS; do
 done
 
 if [ "$MOUNTED" = true ]; then
+    sleep 2
     nemo-desktop -q
     nohup nemo-desktop >/dev/null 2>&1 & disown
 fi

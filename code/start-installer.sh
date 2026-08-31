@@ -1,11 +1,13 @@
 #!/bin/bash
+# /etc/skel/.local/bin/start-installer.sh
 
 if [ -d /cdrom ]; then
     gsettings set org.cinnamon.sounds login-enabled false 2>/dev/null
     gsettings set com.linuxmint.mintwelcome show-at-login false 2>/dev/null
 
     echo "ubiquity ubiquity/use_nonfree boolean true" | sudo debconf-set-selections
-    echo "ubiquity ubiquity/reboot boolean true" | sudo debconf-set-selections
+
+    # echo "ubiquity ubiquity/reboot boolean false" | sudo debconf-set-selections
 
     echo "ubiquity ubiquity/success_command string cp /usr/local/bin/target-setup.sh /target/tmp/ && in-target bash /tmp/target-setup.sh" | sudo debconf-set-selections
 
@@ -13,7 +15,7 @@ if [ -d /cdrom ]; then
     UBI_PID=$!
 
     while true; do
-        if ! kill -0 $UBI_PID 2>/dev/null; then systemctl poweroff; exit; fi
+        if ! kill -0 $UBI_PID 2>/dev/null; then exit 0; fi
         
         WID=$(xdotool search --onlyvisible --class "ubiquity" | head -n 1)
         if [ -n "$WID" ]; then
@@ -26,5 +28,5 @@ if [ -d /cdrom ]; then
 
     wait $UBI_PID
 
-    systemctl poweroff
+    echo "Роботу інсталятора завершено"
 fi
